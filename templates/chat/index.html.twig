@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ChatController!{% endblock %}
+
+{% block body %}
+    <p class="">{{ answerFrom }}</p>
+    <p class="">{{ answer }}</p>
+    <form method="post">
+        Your request :
+        <input type="text" name="userRqChat"/>
+        <input type="submit" value="send" />
+    </form>
+
+</div>
+{% endblock %}
