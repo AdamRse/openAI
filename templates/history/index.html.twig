@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}History index{% endblock %}
+
+{% block body %}
+    <h1>History index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Message</th>
+                <th>Prompt</th>
+                <th>Ts</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for history in histories %}
+            <tr>
+                <td>{{ history.id }}</td>
+                <td>{{ history.message }}</td>
+                <td>{{ history.prompt }}</td>
+                <td>{{ history.ts ? history.ts|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_history_show', {'id': history.id}) }}">show</a>
+                    <a href="{{ path('app_history_edit', {'id': history.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_history_new') }}">Create new</a>
+{% endblock %}

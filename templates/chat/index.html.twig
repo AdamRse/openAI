@@ -3,8 +3,13 @@
 {% block title %}Hello ChatController!{% endblock %}
 
 {% block body %}
-    <p class="">{{ answerFrom }}</p>
-    <p class="">{{ answer }}</p>
+    <div>
+        {% for message in messages %}
+            <div class='answer {{ message.role }}'>
+                {{ message.content }}
+            </div>
+        {% endfor %}
+    </div>
     <form method="post">
         Your request :
         <input type="text" name="userRqChat"/>

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ChatSession{% endblock %}
+
+{% block body %}
+    <h1>Edit ChatSession</h1>
+
+    {{ include('chat_session/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_chat_session_index') }}">back to list</a>
+
+    {{ include('chat_session/_delete_form.html.twig') }}
+{% endblock %}

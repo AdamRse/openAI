@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ChatSession index{% endblock %}
+
+{% block body %}
+    <h1>ChatSession index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ts</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for chat_session in chat_sessions %}
+            <tr>
+                <td>{{ chat_session.id }}</td>
+                <td>{{ chat_session.ts ? chat_session.ts|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_chat_session_show', {'id': chat_session.id}) }}">show</a>
+                    <a href="{{ path('app_chat_session_edit', {'id': chat_session.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_chat_session_new') }}">Create new</a>
+{% endblock %}

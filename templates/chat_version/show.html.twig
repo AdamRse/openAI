@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ChatVersion{% endblock %}
+
+{% block body %}
+    <h1>ChatVersion</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ chat_version.id }}</td>
+            </tr>
+            <tr>
+                <th>Label</th>
+                <td>{{ chat_version.label }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_chat_version_index') }}">back to list</a>
+
+    <a href="{{ path('app_chat_version_edit', {'id': chat_version.id}) }}">edit</a>
+
+    {{ include('chat_version/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ChatVersion{% endblock %}
+
+{% block body %}
+    <h1>Edit ChatVersion</h1>
+
+    {{ include('chat_version/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_chat_version_index') }}">back to list</a>
+
+    {{ include('chat_version/_delete_form.html.twig') }}
+{% endblock %}

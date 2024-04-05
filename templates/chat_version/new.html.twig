@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ChatVersion{% endblock %}
+
+{% block body %}
+    <h1>Create new ChatVersion</h1>
+
+    {{ include('chat_version/_form.html.twig') }}
+
+    <a href="{{ path('app_chat_version_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,13 @@
+.answer{
+    padding: 10px;
+    background-color: #000;
+}
+.answer.user{
+    color: #eee;
+}
+.answer.assistant{
+    color: #afc
+}
+form{
+    padding: 10px;
+}
